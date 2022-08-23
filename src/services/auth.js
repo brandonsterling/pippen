@@ -9,11 +9,11 @@ const config = {
 };
 
 export const loginUser = (user) => {
-  return axios.post("http://localhost:5001/auth/login", user);
+  return axios.post("https://pippenapp.herokuapp.com/auth/login", user);
 };
 
 export const registerUser = (user) => {
-  axios.defaults.withCredentials = true;
+  // axios.defaults.withCredentials = true;
   return axios.post("http://localhost:5001/auth/register", user);
 };
 
