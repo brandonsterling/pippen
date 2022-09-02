@@ -25,7 +25,7 @@ router.post("/register", (request, response) => {
         .save()
         // return success if the new user is added to the database successfully
         .then((result) => {
-          sendMail(templates.confirm(user._id));
+          sendMail(templates.confirm(user._id, user.email));
           response.status(201).send({
             message: "User Created Successfully",
             result,
@@ -120,7 +120,7 @@ router.post("/resend", function (req, res) {
   User.findOne({ email: req.body.email })
     .then((user) => {
       if (user.confirmed !== true) {
-        sendMail(templates.confirm(user._id));
+        sendMail(templates.confirm(user._id, user.email));
         return res.status(201).send({
           message: "We've resent your confirmation email. ",
         });
