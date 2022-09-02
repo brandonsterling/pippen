@@ -18,6 +18,16 @@ const UserSchema = new mongoose.Schema({
     required: [false, "Please provide a confirmation!"],
     unique: false,
   },
+
+  reset_token: {
+    type: String,
+    required: [false, "Please provide a token!"],
+    unique: false,
+  },
+  last_login_date: {
+    type: Date,
+    unique: false,
+  },
 });
 
 module.exports =
