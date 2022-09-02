@@ -4,7 +4,6 @@ import { Register } from "./Register";
 import { Routes, Route } from "react-router-dom";
 import { Confirm } from "./Confirm";
 import { Resend } from "./Resend";
-import Error from "./Error";
 import { Container } from "@mantine/core";
 import { useAuth } from "../../AuthProvider";
 import { ForgotPassword } from "./ForgotPassword";
@@ -28,7 +27,6 @@ function Auth() {
           />
           <Route path="/confirm/:id" exact element={<Confirm />} />
         </Routes>
-        {/* <Error error={error} /> */}
       </Container>
     </>
   );
