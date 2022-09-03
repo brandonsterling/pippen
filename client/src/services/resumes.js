@@ -1,6 +1,11 @@
 import axios from "axios";
 import authHeader from "./authHeader";
 
+axios.defaults.baseURL =
+  process.env.REACT_APP_ENV == "development"
+    ? "http://localhost:5001"
+    : "https://pippapp.herokuapp.com/";
+
 export const getTest = () => {
   return axios.get("http://localhost:5001/resume/test");
 };

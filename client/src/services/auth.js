@@ -4,7 +4,7 @@ import axios from "axios";
 axios.defaults.baseURL =
   process.env.REACT_APP_ENV == "development"
     ? "http://localhost:5001"
-    : "https://pippenapp.herokuapp.com";
+    : "https://pippapp.herokuapp.com/";
 
 export const loginUser = (user) => {
   return axios.post("/auth/login", user);
