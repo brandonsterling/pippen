@@ -8,7 +8,11 @@ const User = require("./models/user");
 const Resume = require("./models/resume");
 
 const app = express();
-app.use(cors());
+app.use(
+  cors({
+    credentials: true,
+  })
+);
 
 // body parser configuration
 app.use(bodyParser.urlencoded({ extended: true }));
