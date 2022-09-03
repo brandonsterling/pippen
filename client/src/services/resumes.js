@@ -6,35 +6,31 @@ axios.defaults.baseURL =
     ? "http://localhost:5001"
     : "https://pippapp.herokuapp.com/";
 
-export const getTest = () => {
-  return axios.get("http://localhost:5001/resume/test");
-};
-
 export const getResumes = (token) => {
-  return axios.get("http://localhost:5001/resume/resumes", {
+  return axios.get("resume/resumes", {
     headers: authHeader(token),
   });
 };
 
 export const getResumeById = (id, token) => {
-  return axios.get(`http://localhost:5001/resume/${id}`, {
+  return axios.get(`/resume/${id}`, {
     headers: authHeader(token),
   });
 };
 
 export const deleteResumeById = (id, token) => {
-  return axios.delete(`http://localhost:5001/resume/${id}`, {
+  return axios.delete(`/resume/${id}`, {
     headers: authHeader(token),
   });
 };
 
 export const updateResume = (values, id) => {
-  return axios.post(`http://localhost:5001/resume/${id}`, values);
+  return axios.post(`/resume/${id}`, values);
 };
 
 export const createResume = (token) => {
   return axios.post(
-    `http://localhost:5001/resume/create`,
+    `/resume/create`,
     {},
     {
       headers: authHeader(token),
